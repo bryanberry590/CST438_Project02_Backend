@@ -108,7 +108,7 @@ public class TeamController {
     }
     
     // just to test if the api routes are running prop
-    @GetMapping("/testing/")
+    @GetMapping("/testing")
     public String health() {
         return "API routes are running!";
     }
