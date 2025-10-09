@@ -1,14 +1,23 @@
 package com.project02.springboot.controller;
 
-import com.project02.springboot.model.Team;
-import com.project02.springboot.Repository.TeamRepository;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.project02.springboot.Repository.TeamRepository;
+import com.project02.springboot.model.Team;
+
 @RestController
-@RequestMapping("/api/team")
+@RequestMapping("/api/teams")
 public class TeamController {
 
     private final TeamRepository repo;
@@ -60,6 +69,16 @@ public class TeamController {
         try {
             Team savedTeam = repo.save(team);
             return ResponseEntity.ok(savedTeam);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    @PostMapping("/bulk")
+    public ResponseEntity<List<Team>> createTeams(@RequestBody List<Team> teams) {
+        try {
+            List<Team> savedTeams = repo.saveAll(teams);
+            return ResponseEntity.ok(savedTeams);
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
         }
