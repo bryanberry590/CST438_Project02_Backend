@@ -1,29 +1,24 @@
-# Use official OpenJDK 17 runtime as base image
 FROM openjdk:17-jdk-slim
 
-# Set working directory inside container
 WORKDIR /app
 
-# Copy Gradle wrapper and build files
+RUN apt-get update && apt-get install -y dos2unix && rm -rf /var/lib/apt/lists/*
+
 COPY gradlew .
-COPY gradle gradle
+COPY gradle gradle/
 COPY build.gradle .
 COPY settings.gradle .
 
-# Copy source code
-COPY src src
+RUN dos2unix ./gradlew && chmod +x ./gradlew
 
-# Make gradlew executable
-RUN chmod +x ./gradlew
+COPY src src/
 
-# Build the application
-RUN ./gradlew build -x test
+# Use bootJar instead of build for Spring Boot apps
+RUN ./gradlew clean bootJar -x test --stacktrace
 
-# Copy the built jar file (find the executable jar, exclude plain jar)
-RUN find build/libs -name "*.jar" -not -name "*-plain.jar" -exec cp {} app.jar \;
+# Copy the executable JAR
+RUN cp build/libs/*.jar app.jar
 
-# Expose port 8080
 EXPOSE 8080
 
-# Set the startup command
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
