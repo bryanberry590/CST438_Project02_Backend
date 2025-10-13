@@ -25,16 +25,24 @@ replay_pid*
 
 # Spring Boot
 target/
-!.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+
+# Maven Wrapper
+.mvn/
+mvnw
+mvnw.cmd
 
 # Gradle
 .gradle
 build/
-!gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+
+# Gradle Wrapper
+gradle/wrapper/
+gradlew
+gradlew.bat
 
 # STS (Spring Tool Suite)
 .apt_generated
@@ -74,6 +82,7 @@ out/
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+$RECYCLE.BIN/
 
 # Application-specific
 application-*.properties
