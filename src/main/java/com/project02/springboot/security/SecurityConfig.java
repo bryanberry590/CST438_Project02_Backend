@@ -1,4 +1,4 @@
-package security;
+package com.project02.springboot.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,6 +22,7 @@ public class SecurityConfig {
       .csrf(csrf -> csrf.disable())
       .authorizeHttpRequests(auth -> auth
         .requestMatchers(HttpMethod.GET, "/api/public/**").permitAll()
+        .requestMatchers("/").permitAll()
         .anyRequest().authenticated()
       )
       .oauth2Login(oauth -> oauth.defaultSuccessUrl("/api/me", true))
