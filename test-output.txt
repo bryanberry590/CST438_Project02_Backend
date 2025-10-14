@@ -1,0 +1,82 @@
+Initialized native services in: C:\Users\Rigo\.gradle\native
+Initialized jansi services in: C:\Users\Rigo\.gradle\native
+Received JVM installation metadata from 'C:\Program Files\Java\jdk-21': {JAVA_HOME=C:\Program Files\Java\jdk-21, JAVA_VERSION=21.0.4, JAVA_VENDOR=Oracle Corporation, RUNTIME_NAME=Java(TM) SE Runtime Environment, RUNTIME_VERSION=21.0.4+8-LTS-274, VM_NAME=Java HotSpot(TM) 64-Bit Server VM, VM_VERSION=21.0.4+8-LTS-274, VM_VENDOR=Oracle Corporation, OS_ARCH=amd64}
+The client will now receive all logging from the daemon (pid: 2520). The daemon log file: C:\Users\Rigo\.gradle\daemon\8.5\daemon-2520.out.log
+Starting 8th build in daemon [uptime: 14 mins 18.948 secs, performance: 91%, GC rate: 0.19/s, heap usage: 10% of 512 MiB, non-heap usage: 18% of 384 MiB]
+Using 8 worker leases.
+Now considering [C:\Users\Rigo\OneDrive\Documents\GitHub\CST438_Project02_Backend] as hierarchies to watch
+Watching the file system is configured to be enabled if available
+File system watching is active
+Starting Build
+Settings evaluated using settings file 'C:\Users\Rigo\OneDrive\Documents\GitHub\CST438_Project02_Backend\settings.gradle'.
+Projects loaded. Root project using build file 'C:\Users\Rigo\OneDrive\Documents\GitHub\CST438_Project02_Backend\build.gradle'.
+Included projects: [root project 'springboot']
+
+> Configure project :
+Evaluating root project 'springboot' using build file 'C:\Users\Rigo\OneDrive\Documents\GitHub\CST438_Project02_Backend\build.gradle'.
+Applying dependency management to configuration 'annotationProcessor' in project 'springboot'
+Applying dependency management to configuration 'apiElements' in project 'springboot'
+Applying dependency management to configuration 'archives' in project 'springboot'
+Applying dependency management to configuration 'bootArchives' in project 'springboot'
+Applying dependency management to configuration 'compileClasspath' in project 'springboot'
+Applying dependency management to configuration 'compileOnly' in project 'springboot'
+Applying dependency management to configuration 'default' in project 'springboot'
+Applying dependency management to configuration 'developmentOnly' in project 'springboot'
+Applying dependency management to configuration 'implementation' in project 'springboot'
+Applying dependency management to configuration 'mainSourceElements' in project 'springboot'
+Applying dependency management to configuration 'productionRuntimeClasspath' in project 'springboot'
+Applying dependency management to configuration 'runtimeClasspath' in project 'springboot'
+Applying dependency management to configuration 'runtimeElements' in project 'springboot'
+Applying dependency management to configuration 'runtimeOnly' in project 'springboot'
+Applying dependency management to configuration 'testAndDevelopmentOnly' in project 'springboot'
+Applying dependency management to configuration 'testAnnotationProcessor' in project 'springboot'
+Applying dependency management to configuration 'testCompileClasspath' in project 'springboot'
+Applying dependency management to configuration 'testCompileOnly' in project 'springboot'
+Applying dependency management to configuration 'testImplementation' in project 'springboot'
+Applying dependency management to configuration 'testResultsElementsForTest' in project 'springboot'
+Applying dependency management to configuration 'testRuntimeClasspath' in project 'springboot'
+Applying dependency management to configuration 'testRuntimeOnly' in project 'springboot'
+All projects evaluated.
+Task name matched 'test'
+Selected primary task 'test' from project :
+Tasks to be executed: [task ':compileJava', task ':processResources', task ':classes', task ':compileTestJava', task ':processTestResources', task ':testClasses', task ':test']
+Tasks that were excluded: []
+Resolve mutations for :compileJava (Thread[#577,Execution worker,5,main]) started.
+:compileJava (Thread[#577,Execution worker,5,main]) started.
+
+> Task :compileJava
+Resolving global dependency management for project 'springboot'
+Excluding []
+Excluding []
+Caching disabled for task ':compileJava' because:
+  Build cache is disabled
+Task ':compileJava' is not up-to-date because:
+  Output property 'destinationDirectory' file C:\Users\Rigo\OneDrive\Documents\GitHub\CST438_Project02_Backend\build\classes\java\main\com\project02\springboot\Repository\GameRepository.class has been removed.
+  Output property 'destinationDirectory' file C:\Users\Rigo\OneDrive\Documents\GitHub\CST438_Project02_Backend\build\classes\java\main\com\project02\springboot\Repository\TeamRepository.class has been removed.
+  Output property 'destinationDirectory' file C:\Users\Rigo\OneDrive\Documents\GitHub\CST438_Project02_Backend\build\classes\java\main\com\project02\springboot\SpringbootApplication.class has been removed.
+The input changes require a full rebuild for incremental task ':compileJava'.
+
+> Task :compileJava FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> java.io.IOException: Unable to delete directory 'C:\Users\Rigo\OneDrive\Documents\GitHub\CST438_Project02_Backend\build\classes\java\main'
+    Failed to delete some children. This might happen because a process has files open or has its working directory set in the target directory.
+    - C:\Users\Rigo\OneDrive\Documents\GitHub\CST438_Project02_Backend\build\classes\java\main\com\project02\springboot\controller
+    - C:\Users\Rigo\OneDrive\Documents\GitHub\CST438_Project02_Backend\build\classes\java\main\com\project02\springboot\model
+    - C:\Users\Rigo\OneDrive\Documents\GitHub\CST438_Project02_Backend\build\classes\java\main\com\project02\springboot\Repository
+    - C:\Users\Rigo\OneDrive\Documents\GitHub\CST438_Project02_Backend\build\classes\java\main\com\project02\springboot
+    - C:\Users\Rigo\OneDrive\Documents\GitHub\CST438_Project02_Backend\build\classes\java\main\com\project02
+    - C:\Users\Rigo\OneDrive\Documents\GitHub\CST438_Project02_Backend\build\classes\java\main\com
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 3s
+1 actionable task: 1 executed
+Watched directory hierarchies: [C:\Users\Rigo\OneDrive\Documents\GitHub\CST438_Project02_Backend]

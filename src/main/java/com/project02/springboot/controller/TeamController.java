@@ -17,7 +17,7 @@ import com.project02.springboot.Repository.TeamRepository;
 import com.project02.springboot.model.Team;
 
 @RestController
-@RequestMapping("/api/teams")
+@RequestMapping("/api/team")
 public class TeamController {
 
     private final TeamRepository repo;
