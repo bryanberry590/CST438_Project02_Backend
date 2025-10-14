@@ -59,3 +59,7 @@ jobs:
         dontuseforce: false
         dontautocreate: true
         usedocker: false
+        docker_heroku_process_type: web
+        delay: 0
+        rollbackonhealthcheckfailed: false
+        justlogin: false
