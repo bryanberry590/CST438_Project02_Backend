@@ -56,3 +56,6 @@ jobs:
         heroku_email: ${{ secrets.HEROKU_EMAIL }}
         branch: main
         buildpack: gradle
+        dontuseforce: false
+        dontautocreate: true
+        usedocker: false
