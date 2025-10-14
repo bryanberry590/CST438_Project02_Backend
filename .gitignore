@@ -25,6 +25,7 @@ replay_pid*
 
 # Spring Boot
 target/
+!.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
@@ -36,6 +37,7 @@ mvnw.cmd
 # Gradle
 .gradle
 build/
+!gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
 
