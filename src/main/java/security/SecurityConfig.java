@@ -19,7 +19,7 @@ public class SecurityConfig {
   SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     http
       .cors(Customizer.withDefaults())
-      .csrf(csrf -> csrf.disable()) // ok for pure REST APIs in dev
+      .csrf(csrf -> csrf.disable())
       .authorizeHttpRequests(auth -> auth
         .requestMatchers(HttpMethod.GET, "/api/public/**").permitAll()
         .anyRequest().authenticated()
@@ -32,7 +32,7 @@ public class SecurityConfig {
   @Bean
   CorsConfigurationSource corsConfigurationSource() {
     CorsConfiguration c = new CorsConfiguration();
-    c.setAllowedOrigins(List.of("http://localhost:3000")); // your frontend origin
+    c.setAllowedOrigins(List.of("http://localhost:3000"));
     c.setAllowedMethods(List.of("GET","POST","PUT","DELETE","OPTIONS"));
     c.setAllowedHeaders(List.of("Content-Type","Authorization"));
     c.setAllowCredentials(true);
