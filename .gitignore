@@ -88,6 +88,7 @@ application-*.properties
 application-*.yml
 !application.properties
 !application.yml
+!application-prod.properties
 
 # Environment variables
 .env
