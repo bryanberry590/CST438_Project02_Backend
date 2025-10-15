@@ -16,7 +16,7 @@ import com.project02.springboot.model.Game;
 @SpringBootTest
 @AutoConfigureMockMvc
 @Transactional
-@ActiveProfiles("test")  // Add this
+@ActiveProfiles("test")
 @DisplayName("Game Entity Tests")
 class GameControllerIntegrationTest {
 
