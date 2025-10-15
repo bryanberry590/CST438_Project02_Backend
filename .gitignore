@@ -43,11 +43,6 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-# Gradle Wrapper
-# gradle/wrapper/
-# gradlew
-# gradlew.bat
-
 # STS (Spring Tool Suite)
 .apt_generated
 .classpath
