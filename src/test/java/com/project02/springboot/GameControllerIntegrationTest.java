@@ -9,14 +9,17 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.project02.springboot.config.TestSecurityConfig;
 import com.project02.springboot.model.Game;
 @SpringBootTest
 @AutoConfigureMockMvc
 @Transactional
 @ActiveProfiles("test")
+@Import(TestSecurityConfig.class)
 @DisplayName("Game Entity Tests")
 class GameControllerIntegrationTest {
 
