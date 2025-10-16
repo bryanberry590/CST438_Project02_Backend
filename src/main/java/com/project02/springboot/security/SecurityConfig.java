@@ -2,7 +2,6 @@ package com.project02.springboot.security;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -18,9 +17,6 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @Profile("!test")
 public class SecurityConfig {
 
-  @Value("${frontend.url:http://localhost:8080}")
-  private String frontendUrl;
-
 
   @Bean
   SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -32,7 +28,7 @@ public class SecurityConfig {
         .requestMatchers("/").permitAll()
         .anyRequest().authenticated()
       )
-      .oauth2Login(oauth -> oauth.defaultSuccessUrl(frontendUrl + "/UpcomingGames", true))
+      .oauth2Login(oauth -> oauth.defaultSuccessUrl("http://10.0.2.2:8080/Login", true))
       .logout(logout -> logout.logoutSuccessUrl("/api/public/ping"));
     return http.build();
   }
