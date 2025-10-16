@@ -19,6 +19,10 @@
 *.tar.gz
 *.rar
 
+# BUT allow Gradle and Maven wrapper jars
+!gradle/wrapper/gradle-wrapper.jar
+!.mvn/wrapper/maven-wrapper.jar
+
 # Virtual machine crash logs
 hs_err_pid*
 replay_pid*
@@ -38,11 +42,6 @@ mvnw.cmd
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
-
-# Gradle Wrapper
-gradle/wrapper/
-gradlew
-gradlew.bat
 
 # STS (Spring Tool Suite)
 .apt_generated
@@ -89,6 +88,7 @@ application-*.properties
 application-*.yml
 !application.properties
 !application.yml
+!application-prod.properties
 
 # Environment variables
 .env
