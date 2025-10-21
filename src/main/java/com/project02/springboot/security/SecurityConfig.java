@@ -25,6 +25,8 @@ public class SecurityConfig {
       .csrf(csrf -> csrf.disable())
       .authorizeHttpRequests(auth -> auth
         .requestMatchers(HttpMethod.GET, "/api/public/**").permitAll()
+        .requestMatchers(HttpMethod.GET, "/api/teams/**").permitAll()         
+        .requestMatchers(HttpMethod.GET, "/api/games/**").permitAll()
         .requestMatchers("/").permitAll()
         .anyRequest().authenticated()
       )
